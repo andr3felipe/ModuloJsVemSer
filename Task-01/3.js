@@ -3,15 +3,15 @@ const prompt = require("prompt-sync")({ sigint: true });
 let start = true;
 
 while(start) {
-  const firstPersonName = getName("Insira o nome da primeira pessoa: \n");
-  const firstPersonAge = getAge("Insira a idade da primeira pessoa: \n");
+  const firstPersonName = getName("Insira o nome da primeira pessoa: ");
+  const firstPersonAge = getAge("Insira a idade da primeira pessoa: ");
 
-  const secondPersonName = getName("Insira o nome da segunda pessoa: \n");
-  const secondPersonAge = getAge("Insira a idade da segunda pessoa: \n");
+  const secondPersonName = getName("Insira o nome da segunda pessoa: ");
+  const secondPersonAge = getAge("Insira a idade da segunda pessoa: ");
 
   console.log(calculateDifferenceInAge({firstPersonName, firstPersonAge}, {secondPersonName, secondPersonAge}));
 
-  start = prompt("\nDeseja fazer uma nova comparação? (S/N): ").toUpperCase() === "S" ? true : false;
+  start = prompt("Deseja fazer uma nova comparação? (S/N): ").toUpperCase() === "S" ? true : false;
 }
 
 
