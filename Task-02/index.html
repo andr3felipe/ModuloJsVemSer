@@ -11,8 +11,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./styles/index.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
-  <body>
+  <body class="bg-body-secondary">
     <main>
       <h1>Task - 02</h1>
       <section class="section exercise-1">
@@ -30,6 +31,8 @@
         </div>
       </section>
 
+      <div class="divisor"></div>
+
       <section class="section">
         <h2>Exercício (2) - Alterando cores</h2>
 
@@ -45,6 +48,8 @@
         </form>
       </section>
 
+      <div class="divisor"></div>
+
       <section class="section exercise-3">
         <h2>Exercício (3) - Contador</h2>
 
@@ -59,6 +64,8 @@
           </button>
       </section>
 
+      <div class="divisor"></div>
+
       <section class="section exercise-4">
         <h2>Exercício (4) - Trocando filtro de imagem</h2>
   
@@ -71,9 +78,10 @@
         </div>
       </section>
 
+      <div class="divisor"></div>
 
       <section class="section exercise-5">
-        <h2 class="mb-3">Exercício (5) - Calculadora</h2>
+        <h2 class="mb-3">Exercício (5) - Calculadora I</h2>
 
         <form class="container-fluid" id="exercise-5-form" onsubmit="simpleCalculator(event)">
          <div class="mb-3">
@@ -103,11 +111,58 @@
 
          <div class="mb-3">
           <button type="submit" class="btn btn-primary container-fluid mb-3">Calcular</button>
-          <input type="reset" value="Limpar" class="btn btn-danger container-fluid" onclick="simpleCalculatorReset()" />
-         </div>
-         
-         
+          <input type="reset" value="Limpar" class="btn btn-danger container-fluid" />
+         </div>           
         </form>
+      </section>
+
+      <div class="divisor"></div>
+
+      <section class="section exercise-6">
+        <h2 class="mb-3">Exercício (6) - Calculadora II</h2>
+
+        <div class="calculator bg-dark-subtle">
+          <h3>Calculadora</h3>
+
+          <input  class="form-control  mb-3" id="exercise-6-result" disabled type="text">
+
+          <div class="calculator-row">
+            <button class="btn btn-primary key" onclick="reset()">C</button>
+            <button class="btn btn-primary key" onclick="backspace()"><i class="ph ph-backspace"></i></button>
+            <button class="btn btn-primary key" onclick="addNumber('/')">/</button>
+            <button class="btn btn-primary key" onclick="addNumber('*')">*</button>
+          </div>
+
+          <div class="calculator-row">
+            <button class="btn btn-primary key" onclick="addNumber('7')">7</button>
+            <button class="btn btn-primary key" onclick="addNumber('8')">8</button>
+            <button class="btn btn-primary key" onclick="addNumber('9')">9</button>
+            <button class="btn btn-primary key" onclick="addNumber('-')">-</button>
+          </div>
+
+          <div class="calculator-row">
+            <button class="btn btn-primary key" onclick="addNumber('4')">4</button>
+            <button class="btn btn-primary key" onclick="addNumber('5')">5</button>
+            <button class="btn btn-primary key" onclick="addNumber('6')">6</button>
+            <button class="btn btn-primary key" onclick="addNumber('+')">+</button>
+          </div>
+
+          <div class="calculator-last-row">
+            <div class="calculator-last-row-content">
+              <div class="calculator-row">
+                <button class="btn btn-primary key" onclick="addNumber('1')">1</button>
+                <button class="btn btn-primary key" onclick="addNumber('2')">2</button>
+                <button class="btn btn-primary key" onclick="addNumber('3')">3</button>
+              </div>
+              <div class="calculator-row">
+                <button class="btn btn-primary zero-key" onclick="addNumber('0')">0</button>
+                <button class="btn btn-primary key" onclick="addNumber('.')">.</button>
+              </div>
+            </div>
+            <button class="btn btn-primary equal-key" onclick="calculate()">=</button>
+          </div>
+
+        </div>
       </section>
     </main>    
 

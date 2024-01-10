@@ -10,6 +10,8 @@ main {
   justify-content: center;
   flex-direction: column;
   padding: 1rem 1rem 5rem;
+
+  background-color: inherit;
 }
 
 main h1 {
@@ -55,4 +57,93 @@ p {
 .exercise-5 {
   max-width: 600px;
   width: 100%;
+}
+
+.calculator {
+  padding: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-flow: column wrap;
+  border-radius: 1rem;
+}
+
+.calculator-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-flow: row no-wrap;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+
+  height: 3.75rem;
+  width: 3.75rem;
+  padding: 0;
+
+  font-size: 2rem;
+}
+
+.equal-key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  height: 8rem;
+  width: 3.75rem;
+
+  padding: 0;
+
+  font-size: 2rem;
+}
+
+.zero-key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  width: 8rem;
+  height: 3.75rem;
+  padding: 0;
+
+  font-size: 2rem;
+}
+
+.calculator-last-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.calculator-last-row-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-flow: column nowrap;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.divisor {
+  margin: 2rem auto;
+  width: 80vw;
+  height: 8px;
+  border-radius: 12px;
+  background: linear-gradient(to right, #d34c31, #ec917e, #ef6c52);
+  background-size: 50% 100%;
+  animation: gradientAnimation 1s linear infinite;
 }

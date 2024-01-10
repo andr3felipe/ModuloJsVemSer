@@ -112,3 +112,55 @@ function simpleCalculator(event) {
 function simpleCalculatorReset() {
   document.getElementById("exercise-5-result").placeholder = 0;
 }
+
+// EXERCISE - 6
+
+function addNumber(number) {
+  const result = document.getElementById("exercise-6-result").value;
+  const lastCharacter = result[result.length - 1];
+  const regex = /[0-9]/;
+  const regex2 = /[-+*/\.]/;
+
+  const regex3 = /\./g;
+
+  if (!regex.test(number) && result === "") {
+    return;
+  }
+
+  if (number === "." && String(result).match(regex3)?.length >= 2) {
+    return;
+  }
+
+  if (regex.test(number)) {
+    document.getElementById("exercise-6-result").value += number;
+  }
+
+  if (!regex.test(number) && !regex2.test(lastCharacter)) {
+    document.getElementById("exercise-6-result").value += number;
+  }
+}
+
+function calculate() {
+  let result = document.getElementById("exercise-6-result").value;
+  const lastCharacter = result[result.length - 1];
+  const regex2 = /[-+*/\.]/;
+
+  if (result && regex2.test(lastCharacter)) {
+    result = document.getElementById("exercise-6-result").value = result.slice(
+      0,
+      -1
+    );
+    return (document.getElementById("exercise-6-result").value = eval(result));
+  }
+
+  return (document.getElementById("exercise-6-result").value = eval(result));
+}
+
+function backspace() {
+  const result = document.getElementById("exercise-6-result").value;
+  document.getElementById("exercise-6-result").value = result.slice(0, -1);
+}
+
+function reset() {
+  document.getElementById("exercise-6-result").value = "";
+}
