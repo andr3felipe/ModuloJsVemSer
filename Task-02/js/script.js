@@ -93,24 +93,24 @@ function simpleCalculator(event) {
   const operator = simpleCalculatorForm["exercise-5-select"].value;
 
   if (operator === "+") {
-    return (result.placeholder = firstNumber + secondNumber);
+    return (result.value = firstNumber + secondNumber);
   }
 
   if (operator === "-") {
-    return (result.placeholder = firstNumber - secondNumber);
+    return (result.value = firstNumber - secondNumber);
   }
 
   if (operator === "*") {
-    return (result.placeholder = firstNumber * secondNumber);
+    return (result.value = firstNumber * secondNumber);
   }
 
   if (operator === "/") {
-    return (result.placeholder = firstNumber / secondNumber);
+    return (result.value = firstNumber / secondNumber);
   }
 }
 
 function simpleCalculatorReset() {
-  document.getElementById("exercise-5-result").placeholder = 0;
+  document.getElementById("exercise-5-result").value = 0;
 }
 
 // EXERCISE - 6
