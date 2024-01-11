@@ -1,0 +1,15 @@
+main {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#average-grade,
+#fifithPairNumbers {
+  height: 3rem;
+}
+
+#showEvenNumbers {
+  height: 6.25rem;
+}
