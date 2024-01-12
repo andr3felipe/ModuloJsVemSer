@@ -1,4 +1,11 @@
 // Exercise 1
+
+const listElement = document.getElementById("list");
+
+listElement.addEventListener(
+  "input",
+  () => (listElement.value = listElement.value.replace(/[^0-9,\s]/g, ""))
+);
 function orderList(event) {
   event.preventDefault();
 
@@ -7,9 +14,9 @@ function orderList(event) {
 
   const element = document.getElementById("ordered-list");
 
-  element.innerHTML = `<span class="text-warning">Lista em ordem crescente:</span> <strong>${filterAndOrderList.join(
-    ", "
-  )}</strong>`;
+  element.innerHTML = `<span class="text-warning">Lista em ordem crescente:</span> <strong>${filterAndOrderList
+    .map((item) => Number(item))
+    .join(", ")}</strong>`;
 }
 
 // Exercise 2
