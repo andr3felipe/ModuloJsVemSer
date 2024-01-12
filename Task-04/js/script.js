@@ -343,10 +343,12 @@ function teoryOfSets() {
     (a, b) => a - b
   );
 
-  const notInB = A.filter((item) => !B.includes(item));
-  const notinA = B.filter((item) => !A.includes(item));
+  // const notInB = A.filter((item) => !B.includes(item));
+  const difference = B.filter((item) => !A.includes(item)).sort(
+    (a, b) => a - b
+  );
 
-  const difference = [...notInB, ...notinA].sort((a, b) => a - b);
+  // const difference = [...notInB, ...notInA].sort((a, b) => a - b);
 
   document.getElementById(
     "sets"
