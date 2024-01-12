@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#ordered-list {
+  min-height: 24px;
+  height: 100%;
+}
+
+#list-1,
+#list-2 {
+  min-height: 50px;
+  height: 100%;
+}
+
+#cheese-list,
+#step-two,
+#step-three,
+#step-four {
+  min-height: 90px;
+  height: 100%;
+}
+
+#all-books {
+  min-height: 75px;
+  height: 100%;
+}
+
+#horror-books {
+  min-height: 25px;
+  height: 100%;
+}
+
+#rewards {
+  min-height: 190px;
+  height: 100%;
+}
+
+#orders,
+#sets {
+  min-height: 220px;
+  height: 100%;
+}
