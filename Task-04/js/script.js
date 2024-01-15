@@ -336,19 +336,29 @@ function teoryOfSets() {
   const joinAndSort = [...A, ...B].sort((a, b) => a - b);
 
   const union = joinAndSort
-    .filter((item, index) => joinAndSort.indexOf(item) === index)
+    .map((item, index) => {
+      if (joinAndSort.indexOf(item) === index) {
+        return item;
+      }
+    })
+    .filter((item) => item !== undefined)
     .sort((a, b) => a - b);
 
-  const intersection = A.filter((item) => B.includes(item)).sort(
-    (a, b) => a - b
-  );
+  const intersection = A.map((item) => {
+    if (B.includes(item)) {
+      return item;
+    }
+  })
+    .filter((item) => item !== undefined)
+    .sort((a, b) => a - b);
 
-  // const notInB = A.filter((item) => !B.includes(item));
-  const difference = B.filter((item) => !A.includes(item)).sort(
-    (a, b) => a - b
-  );
-
-  // const difference = [...notInB, ...notInA].sort((a, b) => a - b);
+  const difference = B.map((item) => {
+    if (!A.includes(item)) {
+      return item;
+    }
+  })
+    .filter((item) => item !== undefined)
+    .sort((a, b) => a - b);
 
   document.getElementById(
     "sets"
