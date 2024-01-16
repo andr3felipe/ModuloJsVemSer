@@ -119,7 +119,7 @@ async function draw(event) {
 
       setTimeout(() => {
         counter.remove();
-      }, 500);
+      }, 100);
     }
   }, 100);
 
