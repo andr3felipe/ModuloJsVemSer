@@ -1,56 +1,3 @@
-const names = [
-  "Amanda",
-  "Cristina",
-  "Bruno",
-  "Carla",
-  "Daniel",
-  "Eduarda",
-  "Felipe",
-  "Gabriela",
-  "Hugo",
-  "Isabela",
-  "João",
-  "Karen",
-  "Lucas",
-  "Mariana",
-  "Nathan",
-  "Olivia",
-  "Pedro",
-  "Quitéria",
-  "Rafael",
-  "Sofia",
-  "Thiago",
-  "Úrsula",
-  "Valentina",
-  "Wagner",
-  "Xavier",
-  "Yasmin",
-  "Zélio",
-  "Ana",
-  "Breno",
-  "Clara",
-  "Diego",
-  "Evelyn",
-  "Fernando",
-  "Giovanna",
-  "Henrique",
-  "Isadora",
-  "Júlio",
-  "Kamila",
-  "Larissa",
-  "Matheus",
-  "Natália",
-  "Otávio",
-  "Pamela",
-  "Ricardo",
-  "Sabrina",
-  "Túlio",
-  "Vitória",
-  "Wesley",
-  "Yara",
-  "Zara",
-];
-
 async function draw(event) {
   event.preventDefault();
 
@@ -58,26 +5,21 @@ async function draw(event) {
   button.innerText = "Sorteando...";
   button.disabled = true;
 
-  const name = event.target["name"].value;
+  let names = event.target["names"].value.match(
+    /[A-Za-záéíóúâêîôûãÁÉÍÓÚÂÊÎÔÛ\s]+/gi
+  );
+
+  names = names.map((name) => name.trim());
+
   const velocity = event.target["velocity"].value;
   const time = event.target["time"].value;
 
   const namesCopy = [...names];
 
-  let nameFound = false;
-
-  names.forEach((currentName) => {
-    if (currentName.toLowerCase() === name.toLowerCase()) {
-      nameFound = true;
-    }
-  });
-
-  !nameFound && namesCopy.push(name);
-
   const container = document.getElementById("result");
   container.innerHTML = "";
 
-  while (namesCopy.length > 1) {
+  while (namesCopy.length > 0) {
     await new Promise((resolve) => {
       setTimeout(() => {
         const index = Math.floor(Math.random() * namesCopy.length);
@@ -128,7 +70,9 @@ async function draw(event) {
       const div = document.createElement("div");
       div.classList.add("text-center");
       div.classList.add("fs-4");
-      div.innerHTML = `<p class="text-center text-warning"><strong class="text-success">${namesCopy[0]}</strong> foi o(a) sorteado(a)!</p>`;
+      div.innerHTML = `<p class="text-center text-warning"><strong class="text-success">${
+        names[Math.floor(Math.random() * names.length)]
+      }</strong> foi o(a) sorteado(a)!</p>`;
 
       container.appendChild(div);
 
