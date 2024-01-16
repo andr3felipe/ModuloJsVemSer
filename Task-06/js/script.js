@@ -1,13 +1,18 @@
 async function draw(event) {
   event.preventDefault();
 
-  const button = document.getElementById("submit");
-  button.innerText = "Sorteando...";
-  button.disabled = true;
-
   let names = event.target["names"].value.match(
     /[A-Za-záéíóúâêîôûãÁÉÍÓÚÂÊÎÔÛ\s]+/gi
   );
+
+  if (names === null || names?.length < 2) {
+    alert("Você precisa digitar pelo menos dois nomes!");
+    return;
+  }
+
+  const button = document.getElementById("submit");
+  button.innerText = "Sorteando...";
+  button.disabled = true;
 
   names = names.map((name) => name.trim());
 
